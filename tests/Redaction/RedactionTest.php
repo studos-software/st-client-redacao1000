@@ -3,7 +3,6 @@ namespace Studos\Redacao1000\Tests\Redaction;
 
 use Faker\Factory;
 use GuzzleHttp\Psr7\Response;
-use Studos\Redacao1000\HttpClient;
 use Studos\Redacao1000\Redaction;
 use Studos\Redacao1000\Tests\Base;
 
