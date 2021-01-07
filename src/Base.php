@@ -11,7 +11,7 @@ abstract class Base
     /**
      * @var ClientInterface
      */
-    protected $client;
+    protected ClientInterface $client;
 
     /**
      * Constructor
@@ -35,6 +35,35 @@ abstract class Base
     {
         try {
             $response = $this->client->request($method, $uri, ['body' => json_encode($parameters)]);
+
+            $json = $response->getBody()->getContents();
+        } catch (ClientException|Error|GuzzleException $error) {
+            $json = $error->getResponse()->getBody()->getContents();
+        }
+
+        $jsonConverted = mb_convert_encoding($json, "UTF-8");
+
+        return json_decode($jsonConverted, true);
+    }
+
+    /**
+     * Upload file(s).
+     *
+     * @param string $uri
+     * @param array $parameters
+     * @return mixed
+     */
+    protected function upload(string $uri, array $parameters = [])
+    {
+        try {
+            $response = $this->client->request(
+                'POST',
+                $uri,
+                [
+                    'multipart' => $parameters,
+                    'headers' => ['Content-Type' => 'multipart/form-data']
+                ]
+            );
 
             $json = $response->getBody()->getContents();
         } catch (ClientException|Error|GuzzleException $error) {

@@ -36,4 +36,55 @@ final class Redaction extends Base
 
         return $this->request('POST', 'redacao/texto', $params);
     }
+
+    /**
+     * Efetua o cadastramento de uma redação para correção.
+     * O acesso para os erviço de cadastro de escola deverá ser feito pelo parceiro autenticado na API de login.
+     *
+     * @param string $codeStudent
+     * @param string $image
+     * @param string $idTopic
+     * @param string $mode
+     * @param string|null $taskId
+     * @return array
+     */
+    public function image(
+        string $codeStudent,
+        string $image,
+        string $idTopic,
+        string $mode = self::CORRECTION_MODE_ENEM2020,
+        string $taskId = null
+    ): array {
+        $params = [
+            [
+                'name' => "codigoAlunoParceiro",
+                'contents' => $codeStudent,
+            ],
+            [
+                'name' => "idTema",
+                'contents' => $idTopic,
+            ],
+            [
+                'name' => "modeloCorrecao",
+                'contents' => $mode ?? self::CORRECTION_MODE_ENEM2020,
+            ],
+            [
+                'name' => "codigoAlunoParceiro",
+                'contents' => $codeStudent,
+            ],
+            [
+                'name' => "imagemRedacao",
+                'contents' => fopen($image, 'r'),
+            ],
+        ];
+
+        if (!empty($taskId)) {
+            $params[] = [
+                'name' => 'tarefaId',
+                'contents' => $taskId
+            ];
+        }
+
+        return $this->upload('redacao/imagem', $params);
+    }
 }
