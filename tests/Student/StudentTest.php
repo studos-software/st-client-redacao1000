@@ -14,7 +14,7 @@ class StudentTest extends Base
      * @param string $codeStudent
      * @param string $codeSchool
      * @param string $codeRegistration
-     * @param string $codeSchollClass
+     * @param string $codeSchoolClass
      * @param string $email
      * @param string $name
      * @param int|null $taskId
@@ -24,7 +24,7 @@ class StudentTest extends Base
         string $codeStudent,
         string $codeSchool,
         string $codeRegistration,
-        string $codeSchollClass,
+        string $codeSchoolClass,
         string $email,
         string $name,
         int $taskId = null,
@@ -41,7 +41,7 @@ class StudentTest extends Base
             $codeStudent,
             $codeSchool,
             $codeRegistration,
-            $codeSchollClass,
+            $codeSchoolClass,
             $email,
             $name,
             $taskId,

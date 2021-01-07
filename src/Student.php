@@ -11,7 +11,7 @@ final class Student extends Base
      * @param string $codeStudent
      * @param string $codeSchool
      * @param string $codeRegistration
-     * @param string $codeSchollClass
+     * @param string $codeSchoolClass
      * @param string $email
      * @param string $name
      * @param int|null $taskId
@@ -22,7 +22,7 @@ final class Student extends Base
         string $codeStudent,
         string $codeSchool,
         string $codeRegistration,
-        string $codeSchollClass,
+        string $codeSchoolClass,
         string $email,
         string $name,
         int $taskId = null,
@@ -32,7 +32,7 @@ final class Student extends Base
             "codigoAlunoParceiro" => $codeStudent,
             "codigoEscolaParceiro" => $codeSchool,
             "codigoMatricula" => $codeRegistration,
-            "codigoTurmaParceiro" => $codeSchollClass,
+            "codigoTurmaParceiro" => $codeSchoolClass,
             "email" => $email,
             "nome" => $name,
             "gerarTokenAcesso" => $generateAccessToken
