@@ -1,0 +1,7 @@
+{
+  "error": {
+    "timestamp": "07-01-2021 15:26:48",
+    "status": "BAD_REQUEST",
+    "message": "A escola id 7910 n\u00e3o faz parte das escolas do parceiro."
+  }
+}
