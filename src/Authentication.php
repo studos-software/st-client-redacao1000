@@ -1,7 +1,7 @@
 <?php
 namespace Studos\Redacao1000;
 
-final class Autenticacao extends Base
+final class Authentication extends Base
 {
     /**
      * Autêntica o usuário e obtém os dados do mesmo, inclusive o token de acesso.

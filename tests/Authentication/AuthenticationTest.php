@@ -1,11 +1,11 @@
 <?php
-namespace Studos\Redacao1000\Tests\Autenticacao;
+namespace Studos\Redacao1000\Tests\Authentication;
 
 use GuzzleHttp\Psr7\Response;
-use Studos\Redacao1000\Autenticacao;
+use Studos\Redacao1000\Authentication;
 use Studos\Redacao1000\Tests\Base;
 
-class AutenticacaoTest extends Base
+class AuthenticationTest extends Base
 {
     /**
      * @test
@@ -17,7 +17,7 @@ class AutenticacaoTest extends Base
 
         $this->client = $this->getClient($handlerStack);
 
-        $service = new Autenticacao($this->client);
+        $service = new Authentication($this->client);
         $result = $service->login($this->faker->email, $this->faker->password);
 
         $this->assertArrayHasKey('jwtToken', $result['data']);
@@ -35,7 +35,7 @@ class AutenticacaoTest extends Base
 
         $this->client = $this->getClient($handlerStack);
 
-        $service = new Autenticacao($this->client);
+        $service = new Authentication($this->client);
         $result = $service->login($this->faker->email, $this->faker->password);
 
         $this->assertArrayHasKey('error', $result);
