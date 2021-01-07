@@ -1,5 +1,5 @@
 <?php
-namespace Studos\Redacao1000\Tests\School;
+namespace Studos\Redacao1000\Tests\Student;
 
 use Faker\Factory;
 use GuzzleHttp\Psr7\Response;
