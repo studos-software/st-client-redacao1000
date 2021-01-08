@@ -69,10 +69,6 @@ final class Redaction extends Base
                 'contents' => $mode ?? self::CORRECTION_MODE_ENEM2020,
             ],
             [
-                'name' => "codigoAlunoParceiro",
-                'contents' => $codeStudent,
-            ],
-            [
                 'name' => "imagemRedacao",
                 'contents' => fopen($image, 'r'),
             ],

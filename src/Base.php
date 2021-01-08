@@ -56,14 +56,7 @@ abstract class Base
     protected function upload(string $uri, array $parameters = [])
     {
         try {
-            $response = $this->client->request(
-                'POST',
-                $uri,
-                [
-                    'multipart' => $parameters,
-                    'headers' => ['Content-Type' => 'multipart/form-data']
-                ]
-            );
+            $response = $this->client->request('POST', $uri, ['multipart' => $parameters]);
 
             $json = $response->getBody()->getContents();
         } catch (ClientException|Error|GuzzleException $error) {

@@ -60,6 +60,7 @@ class RedactionTest extends Base
 
         $service = new Redaction($this->client);
         $result = $service->image($codeStudent, $image, $idTopic, $mode, $taskId);
+        print_r($result);
 
         $this->assertArrayHasKey('redacaoId', $result['data']);
         $this->assertArrayHasKey('correcaoRedacaoId', $result['data']);
