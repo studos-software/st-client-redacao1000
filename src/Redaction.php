@@ -7,7 +7,7 @@ final class Redaction extends Base
 
     /**
      * Efetua o cadastramento de uma redação para correção.
-     * O acesso para os erviço de cadastro de escola deverá ser feito pelo parceiro autenticado na API de login.
+     * O acesso para o serviço de cadastro de escola deverá ser feito pelo parceiro autenticado na API de login.
      *
      * @param string $codeStudent
      * @param string $body
@@ -39,7 +39,7 @@ final class Redaction extends Base
 
     /**
      * Efetua o cadastramento de uma redação para correção.
-     * O acesso para os erviço de cadastro de escola deverá ser feito pelo parceiro autenticado na API de login.
+     * O acesso para o serviço de cadastro de escola deverá ser feito pelo parceiro autenticado na API de login.
      *
      * @param string $codeStudent
      * @param string $image

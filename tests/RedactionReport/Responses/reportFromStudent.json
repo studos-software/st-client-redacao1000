@@ -1,0 +1,40 @@
+{
+  "data": {
+    "usuarioParceirold": "string",
+    "redacaold": 0,
+    "correcaoRedacaold": 0,
+    "redacaoTipo": "TEXTO",
+    "redacaoTexto": "string",
+    "redacaoEndlmagem": "string",
+    "temald": 0,
+    "temaTitulo": "string",
+    "genero": "string",
+    "situacao": "AGUARDANDO_CORRECAO",
+    "datEnvioCorrecao": "2020-09-21T21:31:11.776Z",
+    "datCorrecao": "2020-09-21T21:31:11.776Z",
+    "rankPlagium": 0,
+    "notaTotal": 0,
+    "comentario": "string",
+    "eixos": [
+      {
+        "ordem": 0,
+        "nome": "string",
+        "nota": 0
+      }
+    ],
+    "comentarios": [
+      {
+        "titulo": "string",
+        "comentario": "string"
+      }
+    ],
+    "codMotivoZero": 0,
+    "motivoZero": "string"
+  },
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 0,
+    "totalElements": 0,
+    "sort": "string"
+  }
+}

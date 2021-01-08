@@ -60,6 +60,10 @@ abstract class Base extends TestCase
         $search = glob($fullPath);
         $file = array_shift($search);
 
+        if (!file_exists($file)) {
+            return "";
+        }
+
         return file_get_contents($file);
     }
 }
