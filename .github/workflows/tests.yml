@@ -32,3 +32,13 @@ jobs:
       - name: Run Tests
         run: |
           php vendor/bin/phpunit --coverage-clover tests/coverage/coverage-clover.xml --log-junit coverage-junit.xml
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./tests/coverage/coverage-clover.xml
+          flags: tests
+          name: codecov-umbrella
+          yml: ./tests/coverage/coverage-codecov.yml
+          fail_ci_if_error: true
