@@ -5,11 +5,11 @@
     "license": "proprietary",
     "require": {
         "php": "^7.4",
-        "ext-json": "*",
-        "guzzlehttp/guzzle": "^7.2"
+        "ext-json": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.12",
+        "guzzlehttp/guzzle": "^7.2",
         "phpunit/phpunit": "^8.5",
         "squizlabs/php_codesniffer": "^3.5"
     },
