@@ -11,7 +11,8 @@
         "fakerphp/faker": "^1.12",
         "guzzlehttp/guzzle": "^7.2",
         "phpunit/phpunit": "^8.5",
-        "squizlabs/php_codesniffer": "^3.5"
+        "squizlabs/php_codesniffer": "^3.5",
+        "friendsofphp/php-cs-fixer": "2.*"
     },
     "authors": [
         {
@@ -28,5 +29,14 @@
         "psr-4": {
             "Studos\\Redacao1000\\Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "bash .hooks/setup.sh"
+        ],
+        "fix-code-style": [
+            "php-cs-fixer fix --config=config_code_style.php_cs",
+            "bash .hooks/setup.sh"
+        ]
     }
 }
