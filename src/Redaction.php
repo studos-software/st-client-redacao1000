@@ -14,6 +14,7 @@ final class Redaction extends Base
      * @param string $idTopic
      * @param string $mode
      * @param string|null $taskId
+     * @param string|null $urlPostBack
      * @return array
      */
     public function text(
@@ -21,7 +22,8 @@ final class Redaction extends Base
         string $body,
         string $idTopic,
         string $mode = self::CORRECTION_MODE_ENEM2020,
-        string $taskId = null
+        string $taskId = null,
+        string $urlPostBack = null
     ): array {
         $params = [
             "codigoAlunoParceiro" => $codeStudent,
@@ -32,6 +34,10 @@ final class Redaction extends Base
 
         if (!empty($taskId)) {
             $params['tarefaId'] = $taskId;
+        }
+
+        if (!empty($urlPostBack)) {
+            $params['urlPostback'] = $urlPostBack;
         }
 
         return $this->request('POST', 'redacao/texto', $params);
@@ -46,6 +52,7 @@ final class Redaction extends Base
      * @param string $idTopic
      * @param string $mode
      * @param string|null $taskId
+     * @param string|null $urlPostBack
      * @return array
      */
     public function image(
@@ -53,7 +60,8 @@ final class Redaction extends Base
         string $image,
         string $idTopic,
         string $mode = self::CORRECTION_MODE_ENEM2020,
-        string $taskId = null
+        string $taskId = null,
+        string $urlPostBack = null
     ): array {
         $params = [
             [
@@ -77,7 +85,14 @@ final class Redaction extends Base
         if (!empty($taskId)) {
             $params[] = [
                 'name' => 'tarefaId',
-                'contents' => $taskId
+                'contents' => $taskId,
+            ];
+        }
+
+        if (!empty($urlPostBack)) {
+            $params[] = [
+                'name' => 'urlPostback',
+                'contents' => $urlPostBack,
             ];
         }
 

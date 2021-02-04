@@ -77,6 +77,12 @@ class RedactionTest extends Base
                 (string) 10000008,
                 $faker->text,
                 (string) $faker->randomNumber(4),
+                Redaction::CORRECTION_MODE_ENEM2020
+            ],
+            'taskId' => [
+                (string) 10000008,
+                $faker->text,
+                '',
                 Redaction::CORRECTION_MODE_ENEM2020,
                 (string) $faker->randomNumber(4)
             ],
@@ -84,6 +90,14 @@ class RedactionTest extends Base
                 (string) 10000008,
                 $faker->text,
                 (string) $faker->randomNumber(4),
+            ],
+            'urlPostBack' => [
+                (string) 10000008,
+                $faker->text,
+                (string) $faker->randomNumber(4),
+                Redaction::CORRECTION_MODE_ENEM2020,
+                null,
+                'http://localhost/hooks/',
             ],
         ];
     }
