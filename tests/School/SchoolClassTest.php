@@ -3,7 +3,7 @@ namespace Studos\Redacao1000\Tests\School;
 
 use Faker\Factory;
 use GuzzleHttp\Psr7\Response;
-use Studos\Redacao1000\SchoolClass;
+use Studos\Redacao1000\School\SchoolClass;
 use Studos\Redacao1000\Tests\Base;
 
 class SchoolClassTest extends Base

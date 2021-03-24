@@ -1,5 +1,8 @@
 <?php
-namespace Studos\Redacao1000;
+
+namespace Studos\Redacao1000\Authentication;
+
+use Studos\Redacao1000\Base;
 
 final class Authentication extends Base
 {

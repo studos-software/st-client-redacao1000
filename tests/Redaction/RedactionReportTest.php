@@ -1,8 +1,8 @@
 <?php
-namespace Studos\Redacao1000\Tests\RedactionReport;
+namespace Studos\Redacao1000\Tests\Redaction;
 
 use GuzzleHttp\Psr7\Response;
-use Studos\Redacao1000\RedactionReport;
+use Studos\Redacao1000\Redaction\RedactionReport;
 use Studos\Redacao1000\Tests\Base;
 
 class RedactionReportTest extends Base

@@ -2,7 +2,8 @@
 namespace Studos\Redacao1000\Tests\Authentication;
 
 use GuzzleHttp\Psr7\Response;
-use Studos\Redacao1000\Authentication;
+use Studos\Redacao1000\Authentication\Authentication;
+use Studos\Redacao1000\Authentication\AuthenticationException;
 use Studos\Redacao1000\Tests\Base;
 
 class AuthenticationTest extends Base
@@ -30,14 +31,15 @@ class AuthenticationTest extends Base
      */
     public function loginWithInvalidCredentialsMustReturnError()
     {
+        $this->expectException(AuthenticationException::class);
+        $this->expectExceptionMessage('Acesso negado. Usuário e/ou senha inválido');
+
         $handleResponse = $this->fixture(__FUNCTION__, 'Responses');
         $handlerStack = [new Response(401, [], $handleResponse)];
 
         $this->client = $this->getClient($handlerStack);
 
         $service = new Authentication($this->client);
-        $result = $service->login($this->faker->email, $this->faker->password);
-
-        $this->assertArrayHasKey('error', $result);
+        $service->login($this->faker->email, $this->faker->password);
     }
 }

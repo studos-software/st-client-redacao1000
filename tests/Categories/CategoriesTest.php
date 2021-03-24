@@ -1,11 +1,8 @@
 <?php
-namespace Studos\Redacao1000\Tests\School;
+namespace Studos\Redacao1000\Tests\Categories;
 
-use Faker\Factory;
 use GuzzleHttp\Psr7\Response;
-use Studos\Redacao1000\Categories;
-use Studos\Redacao1000\HttpClient;
-use Studos\Redacao1000\School;
+use Studos\Redacao1000\Categories\Categories;
 use Studos\Redacao1000\Tests\Base;
 
 class CategoriesTest extends Base

@@ -3,8 +3,7 @@ namespace Studos\Redacao1000\Tests\Redaction;
 
 use Faker\Factory;
 use GuzzleHttp\Psr7\Response;
-use Studos\Redacao1000\HttpClient;
-use Studos\Redacao1000\Redaction;
+use Studos\Redacao1000\Redaction\Redaction;
 use Studos\Redacao1000\Tests\Base;
 
 class RedactionTest extends Base
@@ -24,8 +23,7 @@ class RedactionTest extends Base
         string $idTopic,
         string $mode = Redaction::CORRECTION_MODE_ENEM2020,
         string $taskId = null
-    )
-    {
+    ) {
         $handleResponse = $this->fixture(__FUNCTION__, 'Responses');
         $handlerStack = [new Response(200, [], $handleResponse)];
         $this->client = $this->getClient($handlerStack);
@@ -52,8 +50,7 @@ class RedactionTest extends Base
         string $idTopic,
         string $mode = Redaction::CORRECTION_MODE_ENEM2020,
         string $taskId = null
-    )
-    {
+    ) {
         $handleResponse = $this->fixture(__FUNCTION__, 'Responses');
         $handlerStack = [new Response(200, [], $handleResponse)];
         $this->client = $this->getClient($handlerStack);

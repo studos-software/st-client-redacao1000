@@ -37,13 +37,14 @@ abstract class Base
             $response = $this->client->request($method, $uri, ['body' => json_encode($parameters)]);
 
             $json = $response->getBody()->getContents();
+            $jsonConverted = mb_convert_encoding($json, "UTF-8");
+
+            return json_decode($jsonConverted, true);
         } catch (ClientException|Error|GuzzleException $error) {
-            $json = $error->getResponse()->getBody()->getContents();
+            $this->throwsError($error);
+
+            return false;
         }
-
-        $jsonConverted = mb_convert_encoding($json, "UTF-8");
-
-        return json_decode($jsonConverted, true);
     }
 
     /**
@@ -59,12 +60,28 @@ abstract class Base
             $response = $this->client->request('POST', $uri, ['multipart' => $parameters]);
 
             $json = $response->getBody()->getContents();
+            $jsonConverted = mb_convert_encoding($json, "UTF-8");
+
+            return json_decode($jsonConverted, true);
         } catch (ClientException|Error|GuzzleException $error) {
-            $json = $error->getResponse()->getBody()->getContents();
+            $this->throwsError($error);
+
+            return false;
         }
+    }
 
+    /**
+     * Throws error exception
+     * @param $error
+     */
+    private function throwsError($error)
+    {
+        $json = $error->getResponse()->getBody()->getContents();
         $jsonConverted = mb_convert_encoding($json, "UTF-8");
+        $result =  json_decode($jsonConverted, true);
+        $message = $result['error']['message'] ?? $result['error']['status'];
+        $exceptionClass = get_called_class() . 'Exception';
 
-        return json_decode($jsonConverted, true);
+        throw new $exceptionClass($message, $error->getCode());
     }
 }

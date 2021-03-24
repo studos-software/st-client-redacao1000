@@ -3,7 +3,7 @@ namespace Studos\Redacao1000\Tests\School;
 
 use Faker\Factory;
 use GuzzleHttp\Psr7\Response;
-use Studos\Redacao1000\School;
+use Studos\Redacao1000\School\School;
 use Studos\Redacao1000\Tests\Base;
 
 class SchoolTest extends Base
@@ -25,8 +25,7 @@ class SchoolTest extends Base
         string $state,
         string $email = null,
         string $phoneNumber = null
-    )
-    {
+    ) {
         $handleResponse = $this->fixture(__FUNCTION__, 'Responses');
         $handlerStack = [new Response(200, [], $handleResponse)];
 
