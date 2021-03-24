@@ -3,8 +3,7 @@ namespace Studos\Redacao1000\Tests\Redaction;
 
 use Faker\Factory;
 use GuzzleHttp\Psr7\Response;
-use Studos\Redacao1000\HttpClient;
-use Studos\Redacao1000\RedactionTheme;
+use Studos\Redacao1000\Redaction\RedactionTheme;
 use Studos\Redacao1000\Tests\Base;
 
 class RedactionThemeTest extends Base

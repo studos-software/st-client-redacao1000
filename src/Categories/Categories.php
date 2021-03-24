@@ -1,5 +1,8 @@
 <?php
-namespace Studos\Redacao1000;
+
+namespace Studos\Redacao1000\Categories;
+
+use Studos\Redacao1000\Base;
 
 final class Categories extends Base
 {
